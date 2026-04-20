@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact 1 Oak Advisory — Schedule a confidential consultation regarding asset valuation, note sales, REO disposition, or distressed asset advisory.">
+  <title>Contact — 1 Oak Advisory</title>
+  <link rel="icon" type="image/png" href="assets/IMG_7956.PNG">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" aria-hidden="true" role="presentation"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot"  aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="1 Oak Advisory — Home">
+        <img src="assets/IMG_6335.jpg" alt="1 Oak Advisory">
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="disclosures.html">Disclosures</a></li>
+        <li><a href="contact.html" class="nav__cta active">Contact</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <nav class="nav__mobile" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="disclosures.html">Disclosures</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero__inner">
+      <p class="label">Get in Touch</p>
+      <h1 class="page-hero__title">Contact 1 Oak Advisory</h1>
+      <p class="page-hero__body">We engage exclusively with banks and credit unions. All inquiries are handled with strict professional discretion. A confidentiality agreement is required prior to the review of any asset or portfolio information.</p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="contact-grid fade-in">
+
+        <!-- Form -->
+        <!-- NOTE: Replace the Formspree action URL with your own endpoint.
+             Sign up free at formspree.io → create a form → copy the endpoint URL. -->
+        <div>
+          <p class="label" style="margin-bottom:20px;">Send an Inquiry</p>
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/REPLACE_WITH_YOUR_ID"
+            method="POST"
+            novalidate
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Chief Credit Officer" autocomplete="organization-title">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="institution">Institution</label>
+              <input type="text" id="institution" name="institution" placeholder="First National Bank" required autocomplete="organization">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jsmith@institution.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">
+                  Phone
+                  <span style="font-size:0.6rem;letter-spacing:0.1em;color:rgba(96,96,96,0.55);margin-left:6px;">Optional</span>
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Nature of Inquiry</label>
+              <textarea id="message" name="message" placeholder="Please provide a brief description of your institution's situation and the nature of your inquiry." required></textarea>
+            </div>
+
+            <!-- Honeypot spam protection -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true">
+
+            <div>
+              <button type="submit" class="btn btn--primary" style="cursor:pointer;">Submit Inquiry</button>
+              <p style="margin-top:14px;font-size:0.72rem;color:var(--silver-dark);letter-spacing:0.04em;line-height:1.65;">By submitting, you agree to be contacted by 1 Oak Advisory regarding your inquiry. A confidentiality agreement will be required prior to any asset review.</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <p class="label" style="margin-bottom:20px;">Direct Contact</p>
+          <div class="contact-info">
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Email</span>
+              <div class="contact-info__value">
+                <a href="mailto:inquiries@1oakadvisory.com">inquiries@1oakadvisory.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Phone</span>
+              <div class="contact-info__value">
+                <a href="tel:+12125550100">+1 (212) 555-0100</a>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Office Address</span>
+              <div class="contact-info__value">
+                100 Financial District Blvd<br>
+                Suite 900<br>
+                New York, NY 10005
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Mailing Address</span>
+              <div class="contact-info__value">
+                P.O. Box 1 Oak<br>
+                New York, NY 10005
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <span class="contact-info__label">Business Hours</span>
+              <div class="contact-info__value">
+                Monday – Friday<br>
+                9:00 AM – 6:00 PM ET
+              </div>
+            </div>
+
+          </div>
+
+          <div class="contact-note" style="margin-top:40px;">
+            <p><strong style="color:var(--silver-light);font-weight:500;">Confidentiality Notice:</strong> Confidentiality agreements are required prior to the review of any asset details, portfolio data, or transaction information. All inquiries are treated with strict professional discretion.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Confidentiality Bar -->
+  <div class="conf-bar">
+    <div class="conf-bar__inner">
+      <svg class="conf-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <rect x="3" y="11" width="18" height="11" rx="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      <p class="conf-bar__text">Confidentiality agreements required prior to asset review. All inquiries are handled with strict professional discretion.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="assets/IMG_6335.jpg" alt="1 Oak Advisory">
+          <p class="footer__tagline">Structured Expertise. Decisive Execution.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="disclosures.html">Disclosures</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__links">
+            <li><a href="mailto:inquiries@1oakadvisory.com">inquiries@1oakadvisory.com</a></li>
+            <li><a href="tel:+12125550100">+1 (212) 555-0100</a></li>
+            <li><span>100 Financial District Blvd<br>Suite 900<br>New York, NY 10005</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 1 Oak Advisory. All rights reserved.</p>
+        <p class="footer__legal"><a href="disclosures.html">Disclosures &amp; Compliance</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
