@@ -1469,7 +1469,7 @@ body.page-loaded .page-hero__kicker {
    Six items plus a ~211px logo: tighten spacing before the squeeze,
    then hand over to the hamburger. Scoped so the rules stop applying
    once .nav__links is hidden. */
-@media (min-width: 941px) and (max-width: 1200px) {
+@media (min-width: 1011px) and (max-width: 1300px) {
   .nav__links { gap: 20px; }
   .nav__links a { font-size: 0.66rem; letter-spacing: 0.12em; }
   .nav__links a.nav__cta { padding: 9px 14px !important; }
@@ -1477,7 +1477,9 @@ body.page-loaded .page-hero__kicker {
 
 .nav__links a { white-space: nowrap; }
 
-@media (max-width: 940px) {
+/* Six items — the longest of them "Institutional Sellers" — plus a ~211px logo
+   stop fitting below about 1010px even at the reduced sizing. */
+@media (max-width: 1010px) {
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
 }
@@ -1691,7 +1693,7 @@ button:focus-visible,
 .form-group textarea:user-invalid { border-bottom-color: #c98b8b; }
 
 /* ---------- Mobile menu must never survive the desktop breakpoint ---------- */
-@media (min-width: 941px) {
+@media (min-width: 1011px) {
   .nav__mobile, .nav__mobile.open { display: none !important; }
 }
 

@@ -222,7 +222,7 @@
 
     /* Widening past the desktop breakpoint must not strand the menu open. */
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 940 && hamburger.classList.contains('open')) setMenu(false);
+      if (window.innerWidth > 1010 && hamburger.classList.contains('open')) setMenu(false);
     });
   }
 
