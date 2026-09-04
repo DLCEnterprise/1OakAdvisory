@@ -321,6 +321,13 @@
   /* ================================================================
      10. CONTACT FORM FEEDBACK
   ================================================================ */
+  /* Form vendors return here with ?sent=1 (see the _next field on contact.html). */
+  var successPanel = document.getElementById('form-success');
+  if (successPanel && /[?&]sent=1/.test(window.location.search)) {
+    successPanel.hidden = false;
+    successPanel.scrollIntoView({ block: 'center' });
+  }
+
   var form = document.querySelector('.contact-form');
   if (form) {
     var submitBtn   = form.querySelector('button[type="submit"]');

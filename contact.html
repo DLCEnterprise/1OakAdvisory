@@ -13,6 +13,9 @@
   <meta property="og:title" content="Submit a Loan Tape — 1 Oak Advisory Acquisitions">
   <meta property="og:description" content="Send us your loan information for an initial review, or speak with our acquisitions team about second mortgages, HELOCs, EPD, and scratch-and-dent assets.">
   <meta property="og:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="1 Oak Advisory — Residential Second Mortgages &amp; HELOCs">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Submit a Loan Tape — 1 Oak Advisory Acquisitions">
   <meta name="twitter:description" content="Send us your loan information for an initial review, or speak with our acquisitions team about second mortgages, HELOCs, EPD, and scratch-and-dent assets.">
@@ -57,7 +60,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="what-we-buy.html">What We Buy</a></li>
         <li><a href="sell-your-loans.html">Sell Your Loans</a></li>
-        <li><a href="originators.html">Originators</a></li>
+        <li><a href="originators.html">Institutional Sellers</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="nav__cta active">Submit a Tape</a></li>
       </ul>
@@ -73,7 +76,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="what-we-buy.html">What We Buy</a></li>
       <li><a href="sell-your-loans.html">Sell Your Loans</a></li>
-      <li><a href="originators.html">Originators &amp; Institutional Sellers</a></li>
+      <li><a href="originators.html">Institutional Sellers</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Submit a Tape</a></li>
     </ul>
@@ -97,7 +100,7 @@
       <div class="section__header fade-in">
         <p class="label">Loan Tape Submission</p>
         <div class="divider"></div>
-        <h2>Submit a Loan Tape</h2>
+        <h2>Send Us Your Loan Information</h2>
         <p>Send us your loan information for an initial review.</p>
       </div>
 
@@ -110,6 +113,8 @@
           accepts multipart uploads. On a free plan the "Upload Loan Tape" file field is silently dropped
           on submit and the tape will never reach the acquisitions inbox.
         -->
+        <p class="form-success" id="form-success" role="status" hidden>Thank you — your submission has reached our acquisitions team. We will follow up using the contact details you provided.</p>
+
         <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" enctype="multipart/form-data">
 
           <fieldset class="form-fieldset">
@@ -192,6 +197,8 @@
 
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true" autocomplete="off" data-1p-ignore data-lpignore="true">
           <input type="hidden" name="_subject" value="Loan tape submission — 1 Oak Advisory">
+          <!-- Returns the seller to this page rather than the form vendor's own thank-you screen. -->
+          <input type="hidden" name="_next" value="https://www.1oakadvisory.com/contact.html?sent=1">
 
           <p class="form-hint" id="tape-hint">All fields are required unless marked Optional. Please leave borrower names, Social Security numbers and account numbers out of an initial tape — loan characteristics are enough for a first review. If a file is large or contains borrower detail, contact us and we will arrange another method of delivery.</p>
 
@@ -223,10 +230,9 @@
             </div>
 
             <div>
-              <span class="contact-info__label">Coverage</span>
+              <span class="contact-info__label">What We Evaluate</span>
               <div class="contact-info__value">
-                Individual assets and loan pools,<br>
-                nationwide.
+                Individual assets and loan pools.
               </div>
             </div>
 
@@ -239,7 +245,7 @@
   </section>
 
   <!-- Prefer to Speak With Us First? -->
-  <section class="section section--dark section--watermark" data-watermark="II">
+  <section class="section section--dark section--watermark" data-watermark="II" id="speak">
     <div class="container">
       <div class="two-col fade-in">
         <div>
@@ -264,7 +270,7 @@
   <section class="section section--charcoal">
     <div class="container">
       <div class="cta fade-in">
-        <p class="label">Acquisitions</p>
+        <p class="label">Start a Conversation</p>
         <h2>A Direct, Recurring Relationship</h2>
         <p>We evaluate both individual assets and loan pools, and are particularly interested in developing direct, recurring relationships with mortgage originators and institutional sellers.</p>
         <div class="section__actions section__actions--center">
@@ -303,7 +309,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="what-we-buy.html">What We Buy</a></li>
             <li><a href="sell-your-loans.html">Sell Your Loans</a></li>
-            <li><a href="originators.html">Originators &amp; Institutional Sellers</a></li>
+            <li><a href="originators.html">Institutional Sellers</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact / Submit a Tape</a></li>
             <li><a href="disclosures.html">Disclosures</a></li>
