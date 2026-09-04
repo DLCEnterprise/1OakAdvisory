@@ -62,10 +62,11 @@ body::after {
   --white:         #ffffff;
   --silver:        #a0a0a0;
   --silver-light:  #cccccc;
-  --silver-dark:   #606060;
+  --silver-dark:   #8a8a8a;
 
   --border-color:  rgba(160, 160, 160, 0.18);
   --border:        1px solid var(--border-color);
+  --field-border:  rgba(160, 160, 160, 0.62);
 
   --serif:   'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --sans:    'Inter', system-ui, -apple-system, sans-serif;
@@ -157,6 +158,7 @@ a {
   z-index: 9998;
   pointer-events: none;
   will-change: transform;
+  transform: translateY(-105%);
 }
 
 /* ---------- Scroll Progress ---------- */
@@ -278,7 +280,7 @@ a {
 
 .nav__cta {
   color: var(--white) !important;
-  border: 1px solid rgba(160, 160, 160, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
   padding: 9px 22px !important;
   transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease !important;
 }
@@ -374,7 +376,7 @@ a {
   background: transparent;
   color: var(--white);
   padding: 14px 35px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.42);
   transition: border-color 0.22s ease, background 0.22s ease, transform 0.5s var(--ease-out);
 }
 
@@ -390,6 +392,8 @@ a {
   align-items: center;
   background: var(--black);
   padding-top: var(--nav-h);
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
   position: relative;
   overflow: hidden;
 }
@@ -447,7 +451,7 @@ body.page-loaded .hero__visual img { opacity: 0.065; }
   max-width: var(--max-w);
   width: 100%;
   margin: 0 auto;
-  padding: var(--section-py) var(--pad-x);
+  padding: var(--section-py) 0;
   position: relative;
   z-index: 1;
 }
@@ -627,7 +631,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   font-family: var(--serif);
   font-size: 2.8rem;
   font-weight: 300;
-  color: rgba(96, 96, 96, 0.4);
+  color: rgba(160, 160, 160, 0.6);
   margin-bottom: 24px;
   line-height: 1;
 }
@@ -831,12 +835,6 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   gap: 28px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -849,14 +847,14 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--silver-dark);
+  color: var(--silver);
 }
 
 .form-group input,
 .form-group textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--field-border);
   color: var(--white);
   font-family: var(--sans);
   font-size: 0.9rem;
@@ -868,7 +866,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
 }
 
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: rgba(96,96,96,0.6); }
+.form-group textarea::placeholder { color: var(--silver-dark); }
 
 .form-group input:focus,
 .form-group textarea:focus { border-bottom-color: var(--silver); }
@@ -911,7 +909,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
 
 .contact-note p {
   font-size: 0.78rem;
-  color: var(--silver-dark);
+  color: var(--silver);
   line-height: 1.7;
 }
 
@@ -989,6 +987,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
 /* ---------- Disclosures ---------- */
 .disclosure-content { max-width: 760px; }
 
+.disclosure-content h2,
 .disclosure-content h3 {
   font-family: var(--serif);
   font-size: 1.4rem;
@@ -998,6 +997,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   margin-bottom: 16px;
 }
 
+.disclosure-content h2:first-child,
 .disclosure-content h3:first-child { margin-top: 0; }
 
 .disclosure-content p {
@@ -1062,7 +1062,6 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   .two-col               { grid-template-columns: 1fr; gap: 40px; }
 
   .contact-grid          { grid-template-columns: 1fr; gap: 56px; }
-  .form-row              { grid-template-columns: 1fr; }
 
   .footer__top           { grid-template-columns: 1fr; gap: 36px; }
   .footer__brand         { grid-column: auto; }
@@ -1095,4 +1094,631 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   .page-hero .label,
   .page-hero__title,
   .page-hero__body { opacity: 1 !important; transform: none !important; }
+}
+
+/* ==========================================================================
+   Acquisition Site Components
+   Added for the residential second-mortgage / HELOC acquisition content.
+   ========================================================================== */
+
+/* ---------- Hero: compact title + kicker ---------- */
+.hero__title--compact {
+  font-size: clamp(2.2rem, 5.2vw, 4.6rem);
+  max-width: 19ch;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .hero__title--compact { font-size: clamp(2rem, 9vw, 2.8rem); }
+}
+
+.hero__kicker {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.9vw, 1.5rem);
+  color: var(--silver-light);
+  max-width: 40ch;
+  margin-bottom: 28px;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+body.page-loaded .hero__kicker {
+  opacity: 1;
+  transform: none;
+  transition: opacity .9s ease .38s, transform .9s var(--ease-out) .38s;
+}
+
+/* Page hero kicker (inner pages) */
+.page-hero__kicker {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  color: var(--silver-light);
+  margin-top: 18px;
+  max-width: 44ch;
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+body.page-loaded .page-hero__kicker {
+  opacity: 1;
+  transform: none;
+  transition: opacity .9s ease .31s, transform .9s var(--ease-out) .31s;
+}
+
+/* ---------- Spec List — asset types, document checklists ---------- */
+.spec-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+  gap: 1px;
+  background: var(--border-color);
+  border: var(--border);
+  list-style: none;
+}
+
+.spec-list li {
+  background: var(--black);
+  padding: 18px 22px;
+  font-family: var(--sans);
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--silver-light);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+.spec-list li::before {
+  content: '—';
+  color: var(--silver-dark);
+  flex-shrink: 0;
+}
+
+.spec-list li:hover { background: var(--charcoal); color: var(--white); }
+
+.spec-list--charcoal li { background: var(--charcoal); }
+.spec-list--charcoal li:hover { background: #1e1e1e; }
+
+.spec-list--tight { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+
+/* ---------- Tenets — declarative single-line statements ---------- */
+.tenets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+}
+
+.tenets li {
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 1.6vw, 1.3rem);
+  color: var(--silver-light);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.4;
+}
+
+/* ---------- Process — numbered acquisition steps ---------- */
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border-color);
+  border: var(--border);
+}
+
+.process__step {
+  background: var(--black);
+  padding: clamp(28px, 3.6vw, 48px);
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: clamp(12px, 3vw, 40px);
+  transition: background 0.22s ease;
+}
+
+.process__step:hover { background: var(--charcoal); }
+
+.process__num {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: rgba(160, 160, 160, 0.6);
+  line-height: 1;
+}
+
+.process__title {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.process__body {
+  font-size: 0.875rem;
+  color: var(--silver);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.process__body + .process__body { margin-top: 14px; }
+
+.process .spec-list { margin-top: 24px; }
+
+@media (max-width: 640px) {
+  .process__step { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ---------- Lifecycle chain ---------- */
+.lifecycle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-top: 8px;
+}
+
+.lifecycle li {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--silver);
+  border: 1px solid var(--border-color);
+  padding: 9px 15px;
+  transition: border-color 0.22s ease, color 0.22s ease;
+}
+
+.lifecycle li:hover { border-color: rgba(160, 160, 160, 0.4); color: var(--white); }
+
+/* ---------- Section helpers (replaces inline styles) ---------- */
+.section__header--center p {
+  max-width: 54ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.section__actions--center { justify-content: center; }
+
+.two-col__title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+/* ---------- CTA band ---------- */
+.cta { text-align: center; }
+
+.cta h2 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  max-width: 24ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta > p:not([class]) {
+  max-width: 54ch;
+  margin: 0 auto 40px;
+  color: var(--silver);
+}
+
+.cta .label { margin-bottom: 20px; }
+
+.cta .section__actions { justify-content: center; margin-top: 0; }
+
+.cta__signature {
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-color);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--silver);
+  line-height: 2;
+}
+
+/* ---------- Form additions (loan tape intake) ---------- */
+.form-fieldset {
+  border: none;
+  padding: 0;
+  min-width: 0;
+}
+
+.form-legend {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--silver);
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+  border-bottom: var(--border);
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.form-group--full { grid-column: 1 / -1; }
+
+.form-group select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--field-border);
+  text-overflow: ellipsis;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 10px 24px 10px 0;
+  outline: none;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none' stroke='%23a0a0a0' stroke-width='1.4'%3E%3Cpath d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+}
+
+.form-group select:focus { border-bottom-color: var(--silver); }
+
+.form-group select option,
+.form-group select optgroup {
+  background-color: #141414;
+  color: #ffffff;
+}
+
+.form-group input[type="file"] {
+  color: var(--silver);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--field-border);
+}
+
+.form-group input[type="file"]::file-selector-button {
+  background: transparent;
+  border: 1px solid var(--field-border);
+  color: var(--silver-light);
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  margin-right: 16px;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  border-color: var(--silver);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--white);
+}
+
+.form-optional {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--silver);
+  margin-left: 6px;
+  text-transform: none;
+}
+
+.form-hint {
+  font-size: 0.78rem;
+  color: var(--silver);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+.form-submit { margin-top: 4px; }
+.form-submit .form-hint { margin-top: 14px; }
+
+.form-success {
+  border: var(--border);
+  background: var(--charcoal);
+  padding: 18px 22px;
+  font-size: 0.8rem;
+  color: var(--silver-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer: four columns ---------- */
+.footer__top { grid-template-columns: 1.7fr 1fr 1fr 1fr; }
+
+@media (max-width: 1024px) {
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__brand { grid-column: auto; }
+}
+
+/* ---------- Nav: breathing room for the expanded menu ----------
+   Six items plus a ~211px logo: tighten spacing before the squeeze,
+   then hand over to the hamburger. Scoped so the rules stop applying
+   once .nav__links is hidden. */
+@media (min-width: 941px) and (max-width: 1200px) {
+  .nav__links { gap: 20px; }
+  .nav__links a { font-size: 0.66rem; letter-spacing: 0.12em; }
+  .nav__links a.nav__cta { padding: 9px 14px !important; }
+}
+
+.nav__links a { white-space: nowrap; }
+
+@media (max-width: 940px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+}
+
+/* Mobile menu must stay reachable on short landscape viewports. */
+.nav__mobile {
+  max-height: calc(100vh - var(--nav-h));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav__mobile a.active { color: var(--white); }
+
+/* ---------- Print additions ---------- */
+@media print {
+  .spec-list li,
+  .process__body,
+  .tenets li { color: #333; }
+
+  .process__step,
+  .spec-list li { background: #fff; }
+
+  /* Reveal-on-scroll styles must not blank the printed page. */
+  .fade-in,
+  .pillars.stagger-in .pillar,
+  .hero__eyebrow, .hero__title, .hero__body, .hero__actions, .hero__kicker,
+  .page-hero__kicker { opacity: 1 !important; transform: none !important; }
+
+  h1, h2, h3, h4,
+  .two-col__title, .cta h2, .process__title, .pillar__title,
+  .service-card__title, .disclosure-content h2, .disclosure-content h3,
+  .statement__quote { color: #000 !important; }
+
+  .pillar, .service-card, .cta, .lifecycle li { background: #fff !important; }
+
+  p, .about-text p, .section__header p, .cta > p:not([class]),
+  .lifecycle li, .form-hint { color: #333 !important; }
+
+  .label, .footer__col-title, .statement__attr { color: #555 !important; }
+}
+
+/* ==========================================================================
+   Accessibility, focus and motion corrections
+   ========================================================================== */
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10002;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+}
+
+main:focus { outline: none; }
+
+html { scroll-padding-top: calc(var(--nav-h) + 16px); }
+
+/* ---------- Visible focus for keyboard users ----------
+   The base styles strip outlines; restore a real indicator on every control. */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav__links a:focus-visible,
+.nav__mobile a:focus-visible,
+.footer__links a:focus-visible,
+.nav__hamburger:focus-visible,
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible,
+.form-group input[type="file"]:focus-visible {
+  outline: 2px solid var(--silver-light);
+  outline-offset: 3px;
+}
+
+.form-group input[type="file"]:focus-within::file-selector-button {
+  border-color: var(--silver);
+}
+
+/* Hover affordances also need a focus counterpart. */
+.service-card:focus-within { background: var(--charcoal); }
+
+/* ---------- Section gutters ----------
+   .section already applies --pad-x, and .container applied it again, indenting
+   section content ~1 gutter further than the page hero, conf bar and footer. */
+.section > .container,
+.statement > .container { padding-left: 0; padding-right: 0; }
+
+/* ---------- Grid children must be allowed to shrink ----------
+   1fr tracks floor at min-content, and a <select> reports its widest option,
+   which pushed the loan-tape form past its column between 769px and 1024px. */
+.form-group,
+.form-grid > *,
+.contact-grid > *,
+.two-col > * { min-width: 0; }
+
+.contact-form { min-width: 0; }
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+}
+
+/* ---------- Form field browser quirks ---------- */
+.form-group input[type="file"]::-webkit-file-upload-button {
+  background: transparent;
+  border: 1px solid var(--field-border);
+  color: var(--silver-light);
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  margin-right: 16px;
+}
+
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0 1000px var(--charcoal) inset;
+  caret-color: var(--white);
+  transition: background-color 9999s ease-out;
+}
+
+/* ---------- Reduced motion ----------
+   The grain and ambient-glow loops run indefinitely, and the custom cursor
+   lags the pointer; honour the OS preference for all of it. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body::after { animation: none !important; }
+  .hero::before { animation: none !important; }
+
+  .fade-in,
+  .pillars.stagger-in .pillar,
+  .hero__eyebrow, .hero__title, .hero__body, .hero__actions, .hero__kicker,
+  .page-hero .label, .page-hero__title, .page-hero__body, .page-hero__kicker {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .page-transition { display: none !important; }
+
+  /* Give the real pointer back — the replacement ring is deliberately lagged. */
+  * { cursor: auto !important; }
+  a, button, [role="button"], summary { cursor: pointer !important; }
+  .cursor-ring, .cursor-dot { display: none !important; }
+}
+
+/* ---------- Trailing note under a list ---------- */
+.section__note {
+  margin-top: clamp(28px, 4vw, 40px);
+  max-width: 66ch;
+  color: var(--silver);
+}
+
+/* ---------- Active state for the nav CTA ---------- */
+.nav__links a.nav__cta.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ---------- Inline prose links ----------
+   The base rule strips colour and underline from every anchor, which left links
+   inside body copy indistinguishable from the text around them. */
+.form-hint a,
+.disclosure-content a,
+.about-text a,
+.section__note a,
+.process__body a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--silver-dark);
+}
+
+.form-hint a:hover,
+.disclosure-content a:hover,
+.about-text a:hover,
+.section__note a:hover,
+.process__body a:hover { text-decoration-color: var(--white); }
+
+/* ---------- Invalid field feedback ----------
+   :user-invalid only matches after the user has interacted, so it does not
+   flag empty fields on arrival. */
+.form-group input:user-invalid,
+.form-group select:user-invalid,
+.form-group textarea:user-invalid { border-bottom-color: #c98b8b; }
+
+/* ---------- Mobile menu must never survive the desktop breakpoint ---------- */
+@media (min-width: 941px) {
+  .nav__mobile, .nav__mobile.open { display: none !important; }
+}
+
+/* ---------- Section watermarks are decorative ----------
+   The alt-text form of content() keeps the numeral out of the accessibility tree
+   in engines that support it. */
+.section--watermark::before { content: attr(data-watermark) / ""; }
+
+/* ---------- Print: the contact page must carry its details ---------- */
+@media print {
+  .contact-info__value,
+  .contact-info__value a,
+  .form-group label,
+  .form-legend,
+  .form-optional { color: #333 !important; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    color: #000 !important;
+    border-bottom: 1px solid #999 !important;
+  }
+
+  .hero, .page-hero, .section, .statement, .pillar, .service-card,
+  .process__step, .spec-list li, .contact-note {
+    background: #fff !important;
+  }
+
+  .skip-link { display: none !important; }
 }

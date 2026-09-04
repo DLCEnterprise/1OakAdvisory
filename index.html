@@ -3,12 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="1 Oak Advisory — Institutional asset advisory for banks and credit unions. Asset valuation, note sales, REO disposition, and distressed asset management.">
-  <title>1 Oak Advisory — Institutional Asset Advisory</title>
+  <meta name="description" content="1 Oak Advisory is an experienced institutional buyer of residential second mortgages and HELOCs — performing, non-performing, EPD, and scratch-and-dent assets, from individual loans to institutional pools.">
+  <title>1 Oak Advisory — Institutional Buyers of Residential Second Mortgages &amp; HELOCs</title>
   <link rel="icon" type="image/png" href="assets/IMG_7956.PNG">
+  <link rel="canonical" href="https://www.1oakadvisory.com/">
+  <meta property="og:url" content="https://www.1oakadvisory.com/">
+  <meta property="og:site_name" content="1 Oak Advisory">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="1 Oak Advisory — Residential Second Mortgage &amp; HELOC Buyer">
+  <meta property="og:description" content="A direct, experienced counterparty for mortgage originators and financial institutions selling residential second mortgages and HELOCs.">
+  <meta property="og:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="1 Oak Advisory — Residential Second Mortgage &amp; HELOC Buyer">
+  <meta name="twitter:description" content="A direct, experienced counterparty for mortgage originators and financial institutions selling residential second mortgages and HELOCs.">
+  <meta name="twitter:image" content="https://www.1oakadvisory.com/assets/og.png">
   <link rel="stylesheet" href="css/styles.css">
+  <noscript>
+    <style>
+      /* Entrance animations are JS-gated; without JS, show everything. */
+      .fade-in, .hero__eyebrow, .hero__title, .hero__body, .hero__actions, .hero__kicker,
+      .page-hero .label, .page-hero__title, .page-hero__body, .page-hero__kicker
+        { opacity: 1 !important; transform: none !important; }
+      .page-transition { display: none !important; }
+      /* The custom cursor is JS-positioned; give the native pointer back. */
+      .cursor-ring, .cursor-dot { display: none !important; }
+      * { cursor: auto !important; }
+      a, button, label, summary, [role="button"] { cursor: pointer !important; }
+      input, textarea, select { cursor: auto !important; }
+    </style>
+  </noscript>
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Page Transition Overlay -->
   <div class="page-transition" aria-hidden="true" role="presentation"></div>
@@ -28,27 +55,31 @@
       </a>
       <ul class="nav__links">
         <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="what-we-buy.html">What We Buy</a></li>
+        <li><a href="sell-your-loans.html">Sell Your Loans</a></li>
+        <li><a href="originators.html">Originators</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="disclosures.html">Disclosures</a></li>
-        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Submit a Tape</a></li>
       </ul>
-      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <nav class="nav__mobile" aria-label="Mobile navigation">
+  <nav class="nav__mobile" id="mobile-menu" aria-label="Mobile navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="what-we-buy.html">What We Buy</a></li>
+      <li><a href="sell-your-loans.html">Sell Your Loans</a></li>
+      <li><a href="originators.html">Originators &amp; Institutional Sellers</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="disclosures.html">Disclosures</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Submit a Tape</a></li>
     </ul>
   </nav>
+
+  <main id="main" tabindex="-1">
 
   <!-- Hero -->
   <section class="hero">
@@ -58,13 +89,14 @@
     </div>
 
     <div class="hero__inner">
-      <p class="label hero__eyebrow">Institutional Asset Advisory</p>
+      <p class="label hero__eyebrow">Residential Mortgage Acquisition &amp; Asset Management</p>
       <div class="hero__line" aria-hidden="true"></div>
-      <h1 class="hero__title">Structured Expertise.<br><em>Decisive Execution.</em></h1>
-      <p class="hero__body">1 Oak Advisory partners exclusively with banks and credit unions to maximize recovery on distressed and performing assets. Our engagement is discreet, our process disciplined, and our outcomes institutional-grade.</p>
+      <h1 class="hero__title hero__title--compact">Institutional Buyers of Residential Second Mortgages <em>&amp; HELOCs</em></h1>
+      <p class="hero__kicker">A direct, experienced counterparty for originators and financial institutions.</p>
+      <p class="hero__body">1 Oak Advisory is an experienced purchaser of residential second mortgages and home equity lines of credit, with a focus on building direct relationships with mortgage originators, banks, credit unions, funds, and other institutional sellers.</p>
       <div class="hero__actions">
-        <a href="contact.html" class="btn btn--primary">Schedule a Consultation</a>
-        <a href="services.html" class="btn btn--outline">Our Services</a>
+        <a href="sell-your-loans.html" class="btn btn--primary">Sell Loans to 1 Oak</a>
+        <a href="contact.html" class="btn btn--outline">Contact Our Acquisitions Team</a>
       </div>
     </div>
   </section>
@@ -73,78 +105,146 @@
   <section class="statement">
     <div class="container">
       <blockquote class="statement__inner fade-in">
-        <p class="statement__quote">Recovery is not a matter of chance.<br>It is a matter of process.</p>
+        <p class="statement__quote">We understand the issues that affect these assets.<br>That allows us to evaluate more than a spreadsheet.</p>
         <cite class="statement__attr">— 1 Oak Advisory</cite>
       </blockquote>
     </div>
   </section>
 
-  <!-- Why 1 Oak -->
+  <!-- Lifecycle Experience -->
   <section class="section section--charcoal section--watermark" data-watermark="I">
     <div class="container">
-      <div class="section__header fade-in">
-        <p class="label">Our Approach</p>
-        <div class="divider"></div>
-        <h2>Built for Institutional Precision</h2>
+      <div class="two-col fade-in">
+        <div>
+          <p class="label">Our Experience</p>
+          <div class="divider"></div>
+          <h2 class="two-col__title">Beyond the Acquisition</h2>
+          <ul class="lifecycle">
+            <li>Acquisition</li>
+            <li>Underwriting</li>
+            <li>Servicing</li>
+            <li>Loss Mitigation</li>
+            <li>Modification</li>
+            <li>Bankruptcy</li>
+            <li>Foreclosure</li>
+            <li>Disposition</li>
+          </ul>
+        </div>
+        <div class="about-text">
+          <p>We acquire performing, non-performing, early payment default, scratch-and-dent, and other seasoned residential second-lien assets.</p>
+          <p>Our experience extends beyond acquisition. We understand the complete lifecycle of residential mortgage assets — from underwriting and servicing through loss mitigation, modification, bankruptcy, foreclosure, and secondary-market disposition.</p>
+          <p>That experience allows us to evaluate opportunities efficiently, understand complicated assets, and provide sellers with a reliable path to liquidity.</p>
+        </div>
       </div>
-      <div class="pillars">
+    </div>
+  </section>
+
+  <!-- What We Buy Teaser -->
+  <section class="section section--dark section--watermark" data-watermark="II">
+    <div class="container">
+      <div class="section__header fade-in">
+        <p class="label">What We Buy</p>
+        <div class="divider"></div>
+        <h2>Residential Second-Lien Mortgage Assets</h2>
+        <p>Our primary focus is residential second-lien mortgage assets, including:</p>
+      </div>
+
+      <ul class="spec-list fade-in">
+        <li>Closed-End Second Mortgages</li>
+        <li>HELOCs</li>
+        <li>Performing Second Mortgages</li>
+        <li>Non-Performing Second Mortgages</li>
+        <li>Early Payment Default (EPD) Loans</li>
+        <li>Scratch-and-Dent Assets</li>
+        <li>Seasoned Residential Loans</li>
+        <li>Individual Assets and Loan Pools</li>
+      </ul>
+
+      <p class="section__note fade-in">Whether you have a recurring flow of newly originated loans, a seasoned portfolio, or a small group of assets requiring a specialized exit, our team can evaluate the opportunity.</p>
+
+      <div class="section__actions fade-in">
+        <a href="what-we-buy.html" class="btn btn--outline">Learn More About What We Buy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Relationships. Experienced Execution. -->
+  <section class="section section--charcoal section--watermark" data-watermark="III">
+    <div class="container">
+      <div class="section__header section__header--center fade-in">
+        <p class="label">Why 1 Oak</p>
+        <div class="divider divider--center"></div>
+        <h2>Direct Relationships. Experienced Execution.</h2>
+      </div>
+
+      <div class="pillars pillars--4">
         <div class="pillar">
           <div class="pillar__number">01</div>
-          <div class="pillar__title">Precision Valuation</div>
-          <p class="pillar__body">We deliver rigorous, market-informed asset valuations grounded in current data and institutional methodology — not estimates.</p>
+          <h3 class="pillar__title">Built for Originators</h3>
+          <p class="pillar__body">We are actively developing direct acquisition relationships with mortgage originators seeking a dependable secondary-market outlet for residential second mortgages and HELOCs. Our goal is to become a repeat counterparty — not simply bid on a single transaction.</p>
         </div>
         <div class="pillar">
           <div class="pillar__number">02</div>
-          <div class="pillar__title">Discreet Execution</div>
-          <p class="pillar__body">All engagements are governed by confidentiality agreements. Your portfolio details and transaction intentions remain strictly protected throughout.</p>
+          <h3 class="pillar__title">Institutional Experience</h3>
+          <p class="pillar__body">We understand the operational, servicing, collateral, compliance, and documentation issues that can affect residential mortgage assets.</p>
         </div>
         <div class="pillar">
           <div class="pillar__number">03</div>
-          <div class="pillar__title">Investor Network</div>
-          <p class="pillar__body">Our curated network of qualified buyers provides immediate, competitive demand — ensuring optimal outcomes across every asset class we serve.</p>
+          <h3 class="pillar__title">Flexible Acquisitions</h3>
+          <p class="pillar__body">We evaluate opportunities ranging from individual loans and small pools to larger institutional transactions.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__number">04</div>
+          <h3 class="pillar__title">Experienced Asset Management</h3>
+          <p class="pillar__body">Our background in servicing oversight, borrower workouts, modifications, bankruptcy, foreclosure, and asset disposition gives us a practical understanding of the assets we purchase.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Teaser -->
-  <section class="section section--dark section--watermark" data-watermark="II">
+  <!-- More Than a Buyer -->
+  <section class="section section--dark section--watermark" data-watermark="IV">
     <div class="container">
-      <div class="section__header section__header--center fade-in">
-        <p class="label">What We Do</p>
-        <div class="divider divider--center"></div>
-        <h2>Core Advisory Services</h2>
-        <p style="max-width:54ch;margin-left:auto;margin-right:auto;">From initial valuation through final disposition, 1 Oak Advisory manages the full lifecycle of complex asset transactions on behalf of financial institutions.</p>
-      </div>
-
-      <div class="services-grid fade-in">
-        <div class="service-card">
-          <div class="service-card__line"></div>
-          <div class="service-card__title">Asset Valuation</div>
-          <p class="service-card__body">Comprehensive, defensible valuations for loan portfolios, REO holdings, and distressed instruments — calibrated to current market conditions.</p>
+      <div class="two-col fade-in">
+        <div>
+          <p class="label">More Than a Buyer</p>
+          <div class="divider"></div>
+          <h2 class="two-col__title">The Value of an Experienced Counterparty</h2>
+          <div class="about-text">
+            <p>The value of an experienced counterparty becomes particularly important when an asset doesn't perform exactly as expected. We have spent years working through complicated residential mortgage situations.</p>
+            <p>That experience influences how we evaluate loans before we purchase them — and how we manage them after closing.</p>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-card__line"></div>
-          <div class="service-card__title">Note Sales</div>
-          <p class="service-card__body">End-to-end execution on performing and non-performing note transactions, from initial packaging through final closing.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card__line"></div>
-          <div class="service-card__title">REO Disposition</div>
-          <p class="service-card__body">Strategic disposition of real estate owned assets with access to a deep pool of institutional and private capital buyers.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card__line"></div>
-          <div class="service-card__title">Distressed Asset Advisory</div>
-          <p class="service-card__body">Advisory counsel on complex distressed situations, including workout alternatives, recovery analysis, and strategic exit paths.</p>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:48px;" class="fade-in">
-        <a href="services.html" class="btn btn--outline">View All Services</a>
+        <ul class="tenets">
+          <li>We understand borrower outreach.</li>
+          <li>We understand loss mitigation.</li>
+          <li>We understand modifications.</li>
+          <li>We understand bankruptcy.</li>
+          <li>We understand foreclosure.</li>
+          <li>We understand collateral and assignment issues.</li>
+          <li>And we understand how these factors ultimately affect asset value.</li>
+        </ul>
       </div>
     </div>
   </section>
+
+  <!-- CTA -->
+  <section class="section section--charcoal">
+    <div class="container">
+      <div class="cta fade-in">
+        <p class="label">Have Loans to Sell?</p>
+        <h2>A Reliable Path to Liquidity</h2>
+        <p>If your institution is evaluating the sale of residential second mortgages, HELOCs, EPDs, scratch-and-dent assets, or seasoned loans, we would like to hear from you. Send us a tape or speak directly with our acquisitions team.</p>
+        <div class="section__actions section__actions--center">
+          <a href="contact.html" class="btn btn--primary">Submit a Loan Tape</a>
+          <a href="contact.html" class="btn btn--outline">Contact Us</a>
+        </div>
+        <p class="cta__signature">1 Oak Advisory LLC<br>Institutional Mortgage Acquisition &amp; Asset Management</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
 
   <!-- Confidentiality Bar -->
   <div class="conf-bar">
@@ -153,7 +253,7 @@
         <rect x="3" y="11" width="18" height="11" rx="2"/>
         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
-      <p class="conf-bar__text">Confidentiality agreements required prior to asset review. All inquiries are handled with strict professional discretion.</p>
+      <p class="conf-bar__text">Information submitted to 1 Oak Advisory for review is treated confidentially.</p>
     </div>
   </div>
 
@@ -163,29 +263,41 @@
       <div class="footer__top">
         <div class="footer__brand">
           <img src="assets/IMG_6335.jpg" alt="1 Oak Advisory">
-          <p class="footer__tagline">Structured Expertise. Decisive Execution.</p>
+          <p class="footer__tagline">Residential Mortgage Acquisition &amp; Asset Management</p>
         </div>
         <div>
           <p class="footer__col-title">Navigation</p>
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="what-we-buy.html">What We Buy</a></li>
+            <li><a href="sell-your-loans.html">Sell Your Loans</a></li>
+            <li><a href="originators.html">Originators &amp; Institutional Sellers</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Contact / Submit a Tape</a></li>
             <li><a href="disclosures.html">Disclosures</a></li>
           </ul>
         </div>
         <div>
+          <p class="footer__col-title">Acquisition Focus</p>
+          <ul class="footer__links">
+            <li><span>Closed-End Second Mortgages</span></li>
+            <li><span>HELOCs</span></li>
+            <li><span>Performing &amp; Non-Performing</span></li>
+            <li><span>EPD &amp; Scratch-and-Dent</span></li>
+            <li><span>Seasoned Residential Loans</span></li>
+          </ul>
+        </div>
+        <div>
           <p class="footer__col-title">Contact</p>
+          <!-- TODO (client): add the real phone number and office address here when confirmed. -->
           <ul class="footer__links">
             <li><a href="mailto:inquiries@1oakadvisory.com">inquiries@1oakadvisory.com</a></li>
-            <li><a href="tel:+12125550100">+1 (212) 555-0100</a></li>
-            <li><span>100 Financial District Blvd<br>Suite 900<br>New York, NY 10005</span></li>
+            <li><a href="contact.html">Submit a loan tape</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 1 Oak Advisory. All rights reserved.</p>
+        <p class="footer__copy">&copy; 2026 1 Oak Advisory LLC. All rights reserved.</p>
         <p class="footer__legal"><a href="disclosures.html">Disclosures &amp; Compliance</a></p>
       </div>
     </div>

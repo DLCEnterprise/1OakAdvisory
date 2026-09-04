@@ -3,6 +3,10 @@
 (function () {
   'use strict';
 
+  /* Respect the OS "reduce motion" setting for every effect below. */
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* ================================================================
      1. PAGE TRANSITION
      Black overlay wipes up to reveal on load; sweeps in from below
@@ -10,7 +14,7 @@
   ================================================================ */
   var overlay = document.querySelector('.page-transition');
 
-  if (overlay) {
+  if (overlay && !reduceMotion) {
     /* Reveal: slide the overlay up off the screen */
     overlay.style.transform = 'translateY(0)';
     overlay.style.transition = 'none';
@@ -33,11 +37,17 @@
 
     /* Intercept internal link clicks */
     document.addEventListener('click', function (e) {
+      if (
+        e.defaultPrevented || e.button !== 0 ||
+        e.metaKey || e.ctrlKey || e.shiftKey || e.altKey
+      ) return;
+
       var link = e.target.closest('a');
       if (!link) return;
 
       var href = link.getAttribute('href');
       if (!href) return;
+      if (link.hasAttribute('download')) return;
       if (
         href.indexOf('http') === 0 ||
         href.indexOf('//') === 0 ||
@@ -63,13 +73,24 @@
       setTimeout(function () {
         window.location.href = href;
       }, 800);
+
+      /* If the navigation never happens (blocked, cancelled, slow), uncover the page. */
+      setTimeout(function () {
+        overlay.style.transition = 'transform 0.5s ease';
+        overlay.style.transform  = 'translateY(-105%)';
+        overlay.style.pointerEvents = 'none';
+      }, 4000);
     });
   }
 
   /* Fire entrance animations after the transition reveal completes */
-  setTimeout(function () {
+  if (reduceMotion) {
     document.body.classList.add('page-loaded');
-  }, 820);
+  } else {
+    setTimeout(function () {
+      document.body.classList.add('page-loaded');
+    }, 820);
+  }
 
 
   /* ================================================================
@@ -78,9 +99,10 @@
   ================================================================ */
   var ring = document.querySelector('.cursor-ring');
   var dot  = document.querySelector('.cursor-dot');
-  var isPointerFine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var isPointerFine = !!(window.matchMedia &&
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-  if (ring && dot && isPointerFine) {
+  if (ring && dot && isPointerFine && !reduceMotion) {
     var mx = -100, my = -100;
     var rx = -100, ry = -100;
 
@@ -166,26 +188,41 @@
   var mobileMenu = document.querySelector('.nav__mobile');
 
   if (hamburger && mobileMenu) {
+    function setMenu(isOpen) {
+      hamburger.classList.toggle('open', isOpen);
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+
     hamburger.addEventListener('click', function () {
-      var isOpen = this.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      this.setAttribute('aria-expanded', String(isOpen));
+      setMenu(!hamburger.classList.contains('open'));
+      if (hamburger.classList.contains('open')) {
+        var first = mobileMenu.querySelector('a');
+        if (first) first.focus();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && hamburger.classList.contains('open')) {
+        setMenu(false);
+        hamburger.focus();
+      }
     });
 
     document.addEventListener('click', function (e) {
       if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        setMenu(false);
       }
     });
 
     mobileMenu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+
+    /* Widening past the desktop breakpoint must not strand the menu open. */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 940 && hamburger.classList.contains('open')) setMenu(false);
     });
   }
 
@@ -204,7 +241,7 @@
           fadeObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
     fadeEls.forEach(function (el) { fadeObs.observe(el); });
 
@@ -215,7 +252,7 @@
           pillarObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
     pillarGroups.forEach(function (g) {
       g.classList.add('stagger-in');
@@ -232,11 +269,11 @@
      7. MAGNETIC BUTTONS
      Buttons subtly follow the cursor on hover.
   ================================================================ */
-  document.querySelectorAll('.btn').forEach(function (btn) {
+  if (!reduceMotion) document.querySelectorAll('.btn').forEach(function (btn) {
     btn.addEventListener('mousemove', function (e) {
       var rect = btn.getBoundingClientRect();
-      var dx   = (e.clientX - (rect.left + rect.width  / 2)) * 0.22;
-      var dy   = (e.clientY - (rect.top  + rect.height / 2)) * 0.28;
+      var dx   = (e.clientX - (rect.left + rect.width  / 2)) * 0.10;
+      var dy   = (e.clientY - (rect.top  + rect.height / 2)) * 0.14;
       btn.style.transition = 'transform 0.15s ease';
       btn.style.transform  = 'translate(' + dx + 'px, ' + dy + 'px)';
     });
@@ -253,7 +290,7 @@
   ================================================================ */
   var heroImg = document.querySelector('.hero__visual img');
 
-  if (heroImg) {
+  if (heroImg && !reduceMotion) {
     window.addEventListener('scroll', function () {
       var y = window.scrollY;
       if (y < window.innerHeight * 1.5) {
@@ -267,12 +304,16 @@
      9. ACTIVE NAV LINK
   ================================================================ */
   var page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__links a').forEach(function (link) {
+  document.querySelectorAll('.nav__links a, .nav__mobile a').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === page) {
       link.classList.add('active');
-    } else if (!link.classList.contains('nav__cta')) {
-      link.classList.remove('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+      if (!link.classList.contains('nav__cta')) {
+        link.classList.remove('active');
+      }
     }
   });
 
@@ -282,11 +323,21 @@
   ================================================================ */
   var form = document.querySelector('.contact-form');
   if (form) {
+    var submitBtn   = form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.textContent : '';
+
+    /* Native constraint validation blocks an invalid form before this fires. */
     form.addEventListener('submit', function () {
-      var btn = form.querySelector('button[type="submit"]');
-      if (btn) {
-        btn.textContent = 'Sending\u2026';
-        btn.disabled    = true;
+      if (!submitBtn) return;
+      submitBtn.textContent = 'Sending\u2026';
+      submitBtn.disabled    = true;
+    });
+
+    /* Restore the button when the browser restores the page from bfcache. */
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted && submitBtn) {
+        submitBtn.textContent = submitLabel;
+        submitBtn.disabled    = false;
       }
     });
   }

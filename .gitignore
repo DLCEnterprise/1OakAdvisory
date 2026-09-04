@@ -1,0 +1,5 @@
+# GitHub Pages serves this repository's root publicly, so anything committed here
+# is reachable at a guessable URL. The client's working files are kept local:
+# source copy decks and the review mockup are not site assets.
+assets/*.pdf
+assets/dropbox files from Mike/
