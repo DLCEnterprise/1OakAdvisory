@@ -222,7 +222,7 @@
 
     /* Widening past the desktop breakpoint must not strand the menu open. */
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 1010 && hamburger.classList.contains('open')) setMenu(false);
+      if (window.matchMedia('(min-width: 63.1875em)').matches && hamburger.classList.contains('open')) setMenu(false);
     });
   }
 
@@ -323,7 +323,7 @@
   ================================================================ */
   /* Form vendors return here with ?sent=1 (see the _next field on contact.html). */
   var successPanel = document.getElementById('form-success');
-  if (successPanel && /[?&]sent=1/.test(window.location.search)) {
+  if (successPanel && /[?&]sent=1/.test(window.location.search)) {
     successPanel.hidden = false;
     successPanel.scrollIntoView({ block: 'center' });
     /* Move focus so the confirmation is announced; role="status" alone can be missed

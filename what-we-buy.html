@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="1 Oak Advisory acquires residential second mortgages and HELOCs — closed-end seconds, performing and non-performing loans, early payment defaults, scratch-and-dent, and seasoned assets, from individual loans to institutional pools.">
   <title>What We Buy — Residential Second Mortgages &amp; HELOCs | 1 Oak Advisory</title>
-  <link rel="icon" type="image/png" href="assets/IMG_7956.PNG">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://www.1oakadvisory.com/what-we-buy.html">
   <meta property="og:url" content="https://www.1oakadvisory.com/what-we-buy.html">
   <meta property="og:site_name" content="1 Oak Advisory">
   <meta property="og:type" content="website">
   <meta property="og:title" content="What We Buy — Residential Second Mortgages &amp; HELOCs">
   <meta property="og:description" content="Closed-end second mortgages, HELOCs, performing and non-performing loans, EPDs, scratch-and-dent, and seasoned residential assets — individual loans to institutional pools.">
-  <meta property="og:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <!-- TODO (launch): point og:image and twitter:image at the live domain once it serves. -->
+  <meta property="og:image" content="https://dlcenterprise.github.io/1OakAdvisory/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="1 Oak Advisory — Residential Second Mortgages &amp; HELOCs">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="What We Buy — Residential Second Mortgages &amp; HELOCs">
   <meta name="twitter:description" content="Closed-end second mortgages, HELOCs, performing and non-performing loans, EPDs, scratch-and-dent, and seasoned residential assets — individual loans to institutional pools.">
-  <meta name="twitter:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <meta name="twitter:image" content="https://dlcenterprise.github.io/1OakAdvisory/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <noscript>
     <style>
@@ -33,6 +38,12 @@
       * { cursor: auto !important; }
       a, button, label, summary, [role="button"] { cursor: pointer !important; }
       input, textarea, select { cursor: auto !important; }
+      /* The hamburger needs JS to open anything, so show the menu inline instead. */
+      .nav__hamburger { display: none !important; }
+      @media (max-width: 63.125em) {
+        .nav__mobile { display: block !important; position: static; border-bottom: 0; padding: 20px 0 0; }
+        .nav__mobile ul { flex-direction: row; flex-wrap: wrap; gap: 14px 20px; }
+      }
     </style>
   </noscript>
 </head>
@@ -89,7 +100,7 @@
     <div class="page-hero__inner">
       <p class="label">What We Buy</p>
       <h1 class="page-hero__title">Residential Second Mortgages &amp; HELOCs</h1>
-      <p class="page-hero__kicker">A particular focus on second-lien residential mortgage assets.</p>
+      <p class="page-hero__kicker">We evaluate performing and non-performing assets across a range of credit profiles, seasoning, and resolution scenarios.</p>
       <p class="page-hero__body">1 Oak Advisory specializes in acquiring residential mortgage assets with a particular focus on second mortgages and home equity lines of credit.</p>
     </div>
   </div>

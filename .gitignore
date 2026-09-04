@@ -3,3 +3,10 @@
 # source copy decks and the review mockup are not site assets.
 assets/*.pdf
 assets/dropbox files from Mike/
+
+# Internal build notes — this repo root is served publicly, so the handoff
+# document does not belong in it.
+HANDOFF.md
+
+# Unreferenced image from the original build; kept locally, not published.
+assets/IMG_6337.JPG

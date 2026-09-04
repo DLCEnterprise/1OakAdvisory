@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Disclosures and compliance information for 1 Oak Advisory LLC — a principal purchaser of residential second mortgages and HELOCs. Nature of business, confidentiality, and the terms on which this website is provided.">
   <title>Disclosures &amp; Compliance | 1 Oak Advisory</title>
-  <link rel="icon" type="image/png" href="assets/IMG_7956.PNG">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://www.1oakadvisory.com/disclosures.html">
   <meta property="og:url" content="https://www.1oakadvisory.com/disclosures.html">
   <meta property="og:site_name" content="1 Oak Advisory">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Disclosures &amp; Compliance — 1 Oak Advisory">
   <meta property="og:description" content="Important information about how 1 Oak Advisory acquires residential mortgage assets as a principal, and the terms on which this website and its materials are provided.">
-  <meta property="og:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <!-- TODO (launch): point og:image and twitter:image at the live domain once it serves. -->
+  <meta property="og:image" content="https://dlcenterprise.github.io/1OakAdvisory/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="1 Oak Advisory — Residential Second Mortgages &amp; HELOCs">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Disclosures &amp; Compliance — 1 Oak Advisory">
   <meta name="twitter:description" content="Important information about how 1 Oak Advisory acquires residential mortgage assets as a principal, and the terms on which this website and its materials are provided.">
-  <meta name="twitter:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <meta name="twitter:image" content="https://dlcenterprise.github.io/1OakAdvisory/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <noscript>
     <style>
@@ -33,6 +38,12 @@
       * { cursor: auto !important; }
       a, button, label, summary, [role="button"] { cursor: pointer !important; }
       input, textarea, select { cursor: auto !important; }
+      /* The hamburger needs JS to open anything, so show the menu inline instead. */
+      .nav__hamburger { display: none !important; }
+      @media (max-width: 63.125em) {
+        .nav__mobile { display: block !important; position: static; border-bottom: 0; padding: 20px 0 0; }
+        .nav__mobile ul { flex-direction: row; flex-wrap: wrap; gap: 14px 20px; }
+      }
     </style>
   </noscript>
 </head>
@@ -110,10 +121,12 @@
         <h2>Nature of Business</h2>
         <p>1 Oak Advisory LLC ("1 Oak," "we," or "the Company") acquires residential mortgage assets — principally residential second mortgages and home equity lines of credit — as a principal, for its own account, and manages those assets following purchase.</p>
         <p>When we evaluate or purchase an asset, we do so as a buyer acting in our own interest. We are not acting as a broker, agent, fiduciary, or advisor for a seller, and we are not engaged to represent a seller's interests in a transaction. A seller and 1 Oak are counterparties to a proposed purchase and sale, and each party is responsible for its own analysis, pricing decisions, and negotiating position.</p>
+        <p>Notwithstanding the Company's name, 1 Oak Advisory does not provide advisory, brokerage, or valuation services to sellers; it acquires assets as a principal for its own account.</p>
         <p>Sellers should evaluate any proposed transaction independently and with their own legal, accounting, tax, and financial advisors before agreeing to it.</p>
 
         <h2>Institutional Counterparties Only</h2>
         <p>This website and the materials made available through it are directed to mortgage originators, banks, credit unions, funds, and other institutional holders of residential mortgage assets. They are intended for use by those institutions and their professional advisors.</p>
+        <!-- TODO (client): confirm that neither 1 Oak nor an affiliate originates consumer mortgage loans. -->
         <p>1 Oak does not originate consumer mortgage loans. Nothing on this website is an offer of credit, an offer to make or arrange a loan, a loan solicitation, or a communication directed to consumers or individual borrowers. Consumers and borrowers with questions about an existing loan should contact the servicer of that loan.</p>
 
         <h2>No Offer, Bid or Commitment</h2>

@@ -2,8 +2,6 @@
    1 Oak Advisory — Global Styles
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
-
 /* ---------- Reset ---------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -449,8 +447,6 @@ a {
   will-change: transform;
   transition: opacity 2s ease;
 }
-
-body.page-loaded .hero__visual img { opacity: 0.065; }
 
 .hero__inner {
   max-width: var(--max-w);
@@ -992,8 +988,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
 /* ---------- Disclosures ---------- */
 .disclosure-content { max-width: 760px; }
 
-.disclosure-content h2,
-.disclosure-content h3 {
+.disclosure-content h2 {
   font-family: var(--serif);
   font-size: 1.4rem;
   font-weight: 400;
@@ -1002,8 +997,7 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
   margin-bottom: 16px;
 }
 
-.disclosure-content h2:first-child,
-.disclosure-content h3:first-child { margin-top: 0; }
+.disclosure-content h2:first-child { margin-top: 0; }
 
 .disclosure-content p {
   color: var(--silver);
@@ -1059,9 +1053,6 @@ body.page-loaded .page-hero__body  { opacity:1; transform:none; transition: opac
 }
 
 @media (max-width: 768px) {
-  .nav__links            { display: none; }
-  .nav__hamburger        { display: flex; }
-
   .pillars               { grid-template-columns: 1fr; }
   .pillars--4            { grid-template-columns: 1fr; }
   .two-col               { grid-template-columns: 1fr; gap: 40px; }
@@ -1392,8 +1383,7 @@ body.page-loaded .page-hero__kicker {
 
 .form-group select:focus { border-bottom-color: var(--silver); }
 
-.form-group select option,
-.form-group select optgroup {
+.form-group select option {
   background-color: #141414;
   color: #ffffff;
 }
@@ -1475,7 +1465,7 @@ body.page-loaded .page-hero__kicker {
    Six items plus a ~211px logo: tighten spacing before the squeeze,
    then hand over to the hamburger. Scoped so the rules stop applying
    once .nav__links is hidden. */
-@media (min-width: 1011px) and (max-width: 1300px) {
+@media (min-width: 63.1875em) and (max-width: 81.25em) {
   .nav__links { gap: 20px; }
   .nav__links a { font-size: 0.66rem; letter-spacing: 0.12em; }
   .nav__links a.nav__cta { padding: 9px 14px !important; }
@@ -1485,7 +1475,7 @@ body.page-loaded .page-hero__kicker {
 
 /* Six items — the longest of them "Institutional Sellers" — plus a ~211px logo
    stop fitting below about 1010px even at the reduced sizing. */
-@media (max-width: 1010px) {
+@media (max-width: 63.125em) {
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
 }
@@ -1578,9 +1568,6 @@ button:focus-visible,
 .form-group input[type="file"]:focus-within::file-selector-button {
   border-color: var(--silver);
 }
-
-/* Hover affordances also need a focus counterpart. */
-.service-card:focus-within { background: var(--charcoal); }
 
 /* ---------- Section gutters ----------
    .section already applies --pad-x, and .container applied it again, indenting
@@ -1699,7 +1686,7 @@ button:focus-visible,
 .form-group textarea:user-invalid { border-bottom-color: #c98b8b; }
 
 /* ---------- Mobile menu must never survive the desktop breakpoint ---------- */
-@media (min-width: 1011px) {
+@media (min-width: 63.1875em) {
   .nav__mobile, .nav__mobile.open { display: none !important; }
 }
 
@@ -1724,9 +1711,12 @@ button:focus-visible,
   }
 
   .hero, .page-hero, .section, .statement, .pillar, .service-card,
-  .process__step, .spec-list li, .contact-note {
+  .process__step, .spec-list li, .contact-note, .form-success {
     background: #fff !important;
   }
+
+  .pillar__number, .process__num { color: #777 !important; }
+  .form-success { color: #333 !important; }
 
   .skip-link { display: none !important; }
 }

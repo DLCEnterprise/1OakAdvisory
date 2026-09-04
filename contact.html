@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Have residential mortgage assets to sell? Submit a loan tape to 1 Oak Advisory or contact our acquisitions team directly about second mortgages, HELOCs, EPD, scratch-and-dent, performing and non-performing loans.">
   <title>Submit a Loan Tape — Contact Acquisitions | 1 Oak Advisory</title>
-  <link rel="icon" type="image/png" href="assets/IMG_7956.PNG">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://www.1oakadvisory.com/contact.html">
   <meta property="og:url" content="https://www.1oakadvisory.com/contact.html">
   <meta property="og:site_name" content="1 Oak Advisory">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Submit a Loan Tape — 1 Oak Advisory Acquisitions">
   <meta property="og:description" content="Send us your loan information for an initial review, or speak with our acquisitions team about second mortgages, HELOCs, EPD, and scratch-and-dent assets.">
-  <meta property="og:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <!-- TODO (launch): point og:image and twitter:image at the live domain once it serves. -->
+  <meta property="og:image" content="https://dlcenterprise.github.io/1OakAdvisory/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="1 Oak Advisory — Residential Second Mortgages &amp; HELOCs">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Submit a Loan Tape — 1 Oak Advisory Acquisitions">
   <meta name="twitter:description" content="Send us your loan information for an initial review, or speak with our acquisitions team about second mortgages, HELOCs, EPD, and scratch-and-dent assets.">
-  <meta name="twitter:image" content="https://www.1oakadvisory.com/assets/og.png">
+  <meta name="twitter:image" content="https://dlcenterprise.github.io/1OakAdvisory/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <noscript>
     <style>
@@ -33,6 +38,12 @@
       * { cursor: auto !important; }
       a, button, label, summary, [role="button"] { cursor: pointer !important; }
       input, textarea, select { cursor: auto !important; }
+      /* The hamburger needs JS to open anything, so show the menu inline instead. */
+      .nav__hamburger { display: none !important; }
+      @media (max-width: 63.125em) {
+        .nav__mobile { display: block !important; position: static; border-bottom: 0; padding: 20px 0 0; }
+        .nav__mobile ul { flex-direction: row; flex-wrap: wrap; gap: 14px 20px; }
+      }
     </style>
   </noscript>
 </head>
@@ -113,7 +124,7 @@
           accepts multipart uploads. On a free plan the "Upload Loan Tape" file field is silently dropped
           on submit and the tape will never reach the acquisitions inbox.
         -->
-        <p class="form-success" id="form-success" role="status" tabindex="-1" hidden>Thank you — your submission has reached our acquisitions team. We will follow up using the contact details you provided.</p>
+        <p class="form-success" id="form-success" role="status" tabindex="-1" hidden>Thank you — your submission has reached our acquisitions team. If the assets fit our acquisition criteria, we will be in touch using the contact details you provided.</p>
 
         <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" enctype="multipart/form-data">
 
@@ -202,11 +213,11 @@
                update it when the live domain is in place, or the redirect will leave the site. -->
           <input type="hidden" name="_next" value="https://www.1oakadvisory.com/contact.html?sent=1">
 
-          <p class="form-hint" id="tape-hint">All fields are required unless marked Optional. A summary tape is enough for the initial review. A non-disclosure agreement is signed before loan-level due diligence begins, and files carrying borrower-level detail — names, Social Security numbers, account numbers, credit and servicing records — are exchanged through the secure method agreed for the transaction rather than through this form.</p>
+          <p class="form-hint" id="tape-hint">All fields are required unless marked Optional. A summary tape is enough for the initial review. A non-disclosure agreement is signed before loan-level due diligence begins, and files carrying borrower-level detail — names, Social Security numbers, account numbers, credit and servicing records — are exchanged through the secure method agreed for the transaction rather than through this form or unsecured email.</p>
 
           <div class="form-submit">
             <button type="submit" class="btn btn--primary">Submit for Review</button>
-            <p class="form-hint">Prefer to send it by email? Write to <a href="mailto:inquiries@1oakadvisory.com">inquiries@1oakadvisory.com</a>. See our <a href="disclosures.html">disclosures</a> for how submitted information is handled.</p>
+            <p class="form-hint">Prefer to email a summary tape? Write to <a href="mailto:inquiries@1oakadvisory.com">inquiries@1oakadvisory.com</a>. See our <a href="disclosures.html">disclosures</a> for how submitted information is handled.</p>
           </div>
 
         </form>
@@ -227,7 +238,7 @@
             <div>
               <span class="contact-info__label">Loan Tapes</span>
               <div class="contact-info__value">
-                Use the form, or email your tape to the address above.
+                Use the form, or email a summary tape to the address above.
               </div>
             </div>
 
@@ -268,10 +279,10 @@
       <div class="cta fade-in">
         <p class="label">Start a Conversation</p>
         <h2>A Direct, Recurring Relationship</h2>
-        <p>One transaction can become a long-term acquisition relationship. If your organization expects ongoing production, occasional EPDs, scratch-and-dent assets, or periodic portfolio sales, we would welcome the opportunity to establish a direct relationship.</p>
+        <p>We welcome conversations with originators and institutions looking to establish an ongoing secondary-market relationship.</p>
         <div class="section__actions section__actions--center">
-          <a href="sell-your-loans.html" class="btn btn--primary">How to Sell Your Loans</a>
-          <a href="originators.html" class="btn btn--outline">For Originators</a>
+          <a href="mailto:inquiries@1oakadvisory.com" class="btn btn--primary">Contact Acquisitions</a>
+          <a href="originators.html" class="btn btn--outline">For Institutional Sellers</a>
         </div>
         <p class="cta__signature">1 Oak Advisory LLC<br>Residential Mortgage Acquisition &amp; Asset Management<br>Direct Acquisitions | Second Mortgages | HELOCs | EPD | Scratch &amp; Dent</p>
       </div>
