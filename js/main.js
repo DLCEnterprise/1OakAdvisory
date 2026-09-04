@@ -326,6 +326,9 @@
   if (successPanel && /[?&]sent=1/.test(window.location.search)) {
     successPanel.hidden = false;
     successPanel.scrollIntoView({ block: 'center' });
+    /* Move focus so the confirmation is announced; role="status" alone can be missed
+       when the element is revealed during initial parse. */
+    successPanel.focus();
   }
 
   var form = document.querySelector('.contact-form');

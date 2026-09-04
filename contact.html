@@ -101,7 +101,7 @@
         <p class="label">Loan Tape Submission</p>
         <div class="divider"></div>
         <h2>Send Us Your Loan Information</h2>
-        <p>Send us your loan information for an initial review.</p>
+        <p>Share the basic transaction details below for an initial review.</p>
       </div>
 
       <div class="contact-grid fade-in">
@@ -113,7 +113,7 @@
           accepts multipart uploads. On a free plan the "Upload Loan Tape" file field is silently dropped
           on submit and the tape will never reach the acquisitions inbox.
         -->
-        <p class="form-success" id="form-success" role="status" hidden>Thank you — your submission has reached our acquisitions team. We will follow up using the contact details you provided.</p>
+        <p class="form-success" id="form-success" role="status" tabindex="-1" hidden>Thank you — your submission has reached our acquisitions team. We will follow up using the contact details you provided.</p>
 
         <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" enctype="multipart/form-data">
 
@@ -185,7 +185,7 @@
                 <input type="text" id="states" name="states" placeholder="e.g. TX, FL, GA">
               </div>
               <div class="form-group form-group--full">
-                <label for="loan-tape">Upload Loan Tape <span class="form-optional">Optional</span></label>
+                <label for="loan-tape">Upload Loan Tape <span class="form-optional">Optional — summary level</span></label>
                 <input type="file" id="loan-tape" name="loan-tape" accept=".csv,.xls,.xlsx,.pdf" aria-describedby="tape-hint">
               </div>
               <div class="form-group form-group--full">
@@ -197,10 +197,12 @@
 
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true" autocomplete="off" data-1p-ignore data-lpignore="true">
           <input type="hidden" name="_subject" value="Loan tape submission — 1 Oak Advisory">
-          <!-- Returns the seller to this page rather than the form vendor's own thank-you screen. -->
+          <!-- Returns the seller to this page rather than the form vendor's own thank-you screen.
+               TODO (client): this URL must match the origin the site is actually served from —
+               update it when the live domain is in place, or the redirect will leave the site. -->
           <input type="hidden" name="_next" value="https://www.1oakadvisory.com/contact.html?sent=1">
 
-          <p class="form-hint" id="tape-hint">All fields are required unless marked Optional. Transactions are conducted under a signed non-disclosure agreement — we will put one in place before loan-level files are exchanged, and arrange a secure method of delivery for files containing borrower information.</p>
+          <p class="form-hint" id="tape-hint">All fields are required unless marked Optional. A summary tape is enough for the initial review. A non-disclosure agreement is signed before loan-level due diligence begins, and files carrying borrower-level detail — names, Social Security numbers, account numbers, credit and servicing records — are exchanged through the secure method agreed for the transaction rather than through this form.</p>
 
           <div class="form-submit">
             <button type="submit" class="btn btn--primary">Submit for Review</button>
@@ -229,12 +231,6 @@
               </div>
             </div>
 
-            <div>
-              <span class="contact-info__label">What We Evaluate</span>
-              <div class="contact-info__value">
-                Individual assets and loan pools.
-              </div>
-            </div>
 
           </div>
 
@@ -272,7 +268,7 @@
       <div class="cta fade-in">
         <p class="label">Start a Conversation</p>
         <h2>A Direct, Recurring Relationship</h2>
-        <p>We evaluate both individual assets and loan pools, and are particularly interested in developing direct, recurring relationships with mortgage originators and institutional sellers.</p>
+        <p>One transaction can become a long-term acquisition relationship. If your organization expects ongoing production, occasional EPDs, scratch-and-dent assets, or periodic portfolio sales, we would welcome the opportunity to establish a direct relationship.</p>
         <div class="section__actions section__actions--center">
           <a href="sell-your-loans.html" class="btn btn--primary">How to Sell Your Loans</a>
           <a href="originators.html" class="btn btn--outline">For Originators</a>

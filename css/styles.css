@@ -103,6 +103,11 @@ a {
 @media (hover: hover) and (pointer: fine) {
   * { cursor: none !important; }
 
+  /* Form fields keep the native pointer — the replacement ring lags and cannot
+     show a text-insertion point. */
+  input, textarea, select,
+  input[type="file"]::file-selector-button { cursor: auto !important; }
+
   .cursor-ring {
     position: fixed;
     width: 40px;
@@ -227,7 +232,7 @@ a {
 }
 
 .nav__inner {
-  max-width: var(--max-w);
+  max-width: calc(var(--max-w) + 2 * var(--pad-x));
   height: 100%;
   margin: 0 auto;
   padding: 0 var(--pad-x);
@@ -1440,6 +1445,7 @@ body.page-loaded .page-hero__kicker {
 .form-submit .form-hint { margin-top: 14px; }
 
 .form-success {
+  grid-column: 1 / -1;
   border: var(--border);
   background: var(--charcoal);
   padding: 18px 22px;
