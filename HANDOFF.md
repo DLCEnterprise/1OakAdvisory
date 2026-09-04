@@ -13,13 +13,13 @@ after purchase. All pages were rewritten against that content, which is now the 
 | `index.html` | `1 OAK ADVISORY - HOME.pdf` | Home |
 | `what-we-buy.html` | `WHAT WE BUY.pdf` | Seven acquisition-focus categories |
 | `sell-your-loans.html` | `SELL YOUR LOANS TO 1 OAK.pdf` | Five-step acquisition process |
-| `originators.html` | `ORIGINATORS.pdf` | Originators, forward flow, banks/CUs, funds |
+| `originators.html` | `ORIGINATORS.pdf` | Nav label "Institutional Sellers"; originators, forward flow, banks/CUs, funds |
 | `about.html` | `ABOUT 1 OAK ADVISORY.pdf` | Founded 2012; philosophy; three disciplines |
 | `contact.html` | `LET.pdf` | Loan-tape intake form |
 | `disclosures.html` | — | Rewritten for a principal-buyer model. **Draft — needs counsel.** |
 | `services.html` | — | Retired URL. Redirects to `what-we-buy.html`. |
 
-Navigation: Home · What We Buy · Sell Your Loans · Originators · About · **Submit a Tape**.
+Navigation: Home · What We Buy · Sell Your Loans · Institutional Sellers · About · **Submit a Tape**.
 Disclosures sits in the footer.
 
 ## Needs the client before launch
@@ -39,11 +39,12 @@ Disclosures sits in the footer.
    reviewed by an attorney. Confirm in particular: (a) that 1 Oak transacts as principal for its own
    account, (b) that it does not originate consumer loans, (c) the correct governing-law state — "New York"
    is carried over from the previous version and is a placeholder, and (d) the revision date.
-4. **Confidentiality wording.** The bar across the bottom of every page reads "Information submitted to
-   1 Oak Advisory for review is treated confidentially." None of the supplied PDFs make a confidentiality
-   statement, so this is an addition — please confirm the wording. The same applies to the loan-tape
-   guidance on `contact.html` ("leave borrower names, Social Security numbers and account numbers out of
-   an initial tape").
+4. **Confidentiality wording.** The bar across the bottom of every page reads "Transactions are conducted
+   under a signed non-disclosure agreement. Information submitted for review is treated confidentially."
+   None of the supplied PDFs makes a confidentiality statement; this wording reflects the firm's stated
+   practice (NDA first, then borrower-level data for diligence, delivered securely) rather than the decks,
+   so it is worth confirming. The same practice is described on the contact form, in the due-diligence step
+   of `sell-your-loans.html`, and in the NPI section of `disclosures.html` — change one and change all four.
 5. **Form field decisions.** The fields come from `LET.pdf` as supplied. Two worth revisiting:
    *Asset Type* is one required select that mixes product (Closed-End Second, HELOC) with performance
    (Performing, Non-Performing, EPD, Scratch-and-Dent), so a seller with performing closed-end seconds
